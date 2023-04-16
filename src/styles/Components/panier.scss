@@ -1,0 +1,56 @@
+.cardbasket{
+transition:  0.5s ease-in;
+    height: 800px;
+    width: 400px;
+    background: white;
+    position: absolute;
+    right: 0px;
+    z-index: 2;
+    border : solid 3px var(--choco);
+    border-right: none;
+    transform: translateX(500px);
+
+    .entetePanier{
+        background: var(--lightchoco);
+    }
+    .closePanier{
+        font-size: 20px;
+        margin: 5px;
+        padding: 5px;
+    }
+    h1{
+        font-size: 1.5em;
+        padding: 5px 0px 20px 0px;
+    }
+    .articles{
+        padding-top: 30px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+;}
+    h2{
+        font-size: 1.1em;
+    }
+    span{
+        font-size: 40px;
+        padding: 15px;
+        cursor: pointer;
+        color: red;
+    }
+    input{
+        margin: 10px;
+        font-size: 12px;
+        padding: 8px;
+        height: 5px;width: 50px;
+        border: 1px solid;
+    }
+    input[type=number]::-webkit-inner-spin-button {
+        -webkit-appearance: visible;
+      }
+    img{
+        height: 60px;
+        width: 60px;
+        margin: 10px;
+    }
+}
