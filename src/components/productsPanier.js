@@ -5,7 +5,7 @@ const productsPanier = ({article}) => {
 
 function handleClick(){
     var rightBasket = document.querySelector('.cardbasket');
-    rightBasket.style.setProperty('transform' , 'translateX(500px)')
+    rightBasket.style.setProperty('visibility' , 'hidden')
 }
     const deletePanier =() => {
         let storedData = window.localStorage.chocolate.split(",");
@@ -17,17 +17,20 @@ function handleClick(){
     return ( 
         <div className='cardbasket'>
             <div className="entetePanier">
-            <span className='closePanier' onClick={() =>handleClick()} >❌</span>            
-            <h1>Votre panier</h1>
+                <span className='closePanier' onClick={() =>handleClick()} >❌</span>            
+                <h1>Votre panier</h1>
             </div>
             <div className="articles">
                 <span onClick={() => deletePanier() }>⤬</span>
                 <img src={article.image} alt={article.image}/>
                 <div className="prix">
-            <h2> {article.title}</h2>
-            <p>{article.price} €</p>      
+                <h2> {article.title}</h2>
+                <p>{article.price} €</p>      
             </div>     
             <input type='number' id='number' defaultValue="1" min='1' max='100' autoComplete='off'></input>
+            </div>
+            <div className="footerPanier">
+                <h2>Montant :<span className='total'> 10€</span></h2>
             </div>
         </div>
     );

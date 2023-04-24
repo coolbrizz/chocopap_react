@@ -1,17 +1,17 @@
 .cardbasket{
-transition:  0.5s ease-in;
-    height: 800px;
+    visibility: hidden;
+transition:  0.2s ease-in;
+    height: 700px;
     width: 400px;
     background: white;
     position: absolute;
-    right: 0px;
+    right: 3px;
     z-index: 2;
     border : solid 3px var(--choco);
     border-right: none;
-    transform: translateX(500px);
-
     .entetePanier{
-        background: var(--lightchoco);
+        background: var(--choco);
+        font-size: 1.3em;
     }
     .closePanier{
         font-size: 20px;
@@ -52,5 +52,19 @@ transition:  0.5s ease-in;
         height: 60px;
         width: 60px;
         margin: 10px;
+    }
+    .footerPanier{
+        position: absolute;
+        background: var(--lightchoco);
+        font-size: 2em;
+        padding: 30px;
+        color: var(--yellow);
+        text-align: right;
+        bottom: 0px;
+        width: 398px;
+    }
+    .total{
+            color: var(--yellow);
+            font-size: 1em;            
     }
 }

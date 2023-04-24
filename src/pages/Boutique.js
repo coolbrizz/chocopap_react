@@ -8,28 +8,27 @@ import Panier from './Panier';
 
 
 const Boutique = () => {
+    const [storeData, setStoreData] = useState([]);
+    const updateStoreData = (newStoreData) => {setStoreData(newStoreData)};
     const [cholcolateData, setChocolateData]= useState([]);
+
     const getData =()=>{axios.get("http://localhost:3005/products")
     .then((res)=>setChocolateData(res.data))};
     useEffect(()=> getData(),[]);
-
-
     return (
         <div>
-            <Navigation />
+            <Navigation storeData={storeData}/>
+            <Panier/>
             <Filtre />
-            <Panier />
             <h1 className='titre'>Boutique</h1>
             <div className="containerChocolate">
-
                 <div className="displayProduct">
                     <ul id="result">
                         {cholcolateData
-                        .map((article)=><Products key={article.id} article={article} /> )}
+                        .map((article)=><Products key={article.id} article={article} storeData={storeData} updateStoreData={updateStoreData}/> )}
                     </ul>
                 </div>
             </div>
-
             <Footer/>
         </div>
 

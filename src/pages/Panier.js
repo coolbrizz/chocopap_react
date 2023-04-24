@@ -4,7 +4,7 @@ import axios from 'axios';
 import ProductsPanier from '../components/productsPanier';
 
 
-const Panier = ({article}) => {
+const Panier = () => {
     const[listData , setListData] = useState([]); 
 
     const chocolateId = window.localStorage.chocolate  ?  window.localStorage.chocolate.split(",") : [];

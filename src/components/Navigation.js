@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
 
-const Navigation = () => {
+const Navigation = ({storeData}) => {
     function handleClick(){
         var rightBasket = document.querySelector('.cardbasket');
-        rightBasket.style.setProperty('transform' , 'translateX(-0px)')
+        rightBasket.style.setProperty('visibility' , 'visible')
     }
     return (
+
         <div>
             <div className="navigation">
                 <nav>
@@ -20,7 +21,7 @@ const Navigation = () => {
                             <li>Boutique</li>
                         </NavLink>
                             <div className="panier">
-                            <li><span className='articlePanier'>3 </span>
+                            <li><span className='articlePanier'>{storeData.length} </span>
                              <i onClick={handleClick}className="fa-solid fa-cart-shopping"></i></li>
                             </div>
                     </ul>
